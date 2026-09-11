@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ganesh Maintenance & Facility Services</title>
+    <title>Ganesh Utsav - Chenda & Expense Tracker</title>
     <style>
-        /* Design System Variables & Reset */
+        /* Design Tokens & Core Setup */
         * {
             margin: 0;
             padding: 0;
@@ -14,24 +14,26 @@
         }
 
         :root {
-            --primary: #f59e0b; /* Golden Orange Accent */
-            --secondary: #1e3a8a; /* Deep Blue Professional */
-            --dark: #0f172a;
-            --light: #f8fafc;
-            --gray: #64748b;
+            --maroon: #800020;
+            --orange: #f97316;
+            --gold: #eab308;
+            --dark: #1e1b4b;
+            --light: #fefce8;
+            --card-bg: #ffffff;
         }
 
         body {
-            background-color: var(--light);
+            background-color: #fafaf9;
             color: var(--dark);
             line-height: 1.6;
         }
 
-        /* Top Header Navigation */
+        /* Committee Header Navigation */
         header {
-            background-color: white;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            padding: 1rem 5%;
+            background: linear-gradient(135deg, var(--maroon), var(--dark));
+            color: white;
+            padding: 1.5rem 5%;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -41,252 +43,251 @@
         }
 
         .logo {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             font-weight: 800;
-            color: var(--secondary);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .logo span {
-            color: var(--primary);
+            color: var(--gold);
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
         }
 
         nav a {
-            color: var(--dark);
+            color: #f3f4f6;
             text-decoration: none;
             margin-left: 1.5rem;
             font-weight: 600;
+            font-size: 1rem;
             transition: color 0.3s;
         }
 
         nav a:hover {
-            color: var(--primary);
+            color: var(--gold);
         }
 
-        /* Hero Banner Section */
+        /* Festival Hero Space */
         .hero {
-            background: linear-gradient(rgba(30, 58, 138, 0.85), rgba(15, 23, 42, 0.9)), 
+            background: linear-gradient(rgba(30, 27, 75, 0.85), rgba(128, 0, 32, 0.9)), 
                         url('https://unsplash.com') no-repeat center center/cover;
             color: white;
-            padding: 7rem 5%;
+            padding: 6rem 5%;
             text-align: center;
         }
 
         .hero h1 {
-            font-size: 3rem;
+            font-size: 3.2rem;
             margin-bottom: 1rem;
-            font-weight: 800;
+            color: var(--gold);
         }
 
         .hero p {
             font-size: 1.25rem;
-            margin-bottom: 2.5rem;
-            color: #e2e8f0;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            color: #e0e7ff;
         }
 
-        .btn {
-            background-color: var(--primary);
-            color: var(--dark);
-            padding: 0.8rem 2.5rem;
-            border: none;
-            border-radius: 5px;
-            font-weight: bold;
-            text-decoration: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 6px rgba(245, 158, 11, 0.3);
-        }
-
-        .btn:hover {
-            background-color: #d97706;
-            color: white;
-            transform: translateY(-2px);
-        }
-
-        /* Core Content Grid Container */
+        /* Main Workspace Containers */
         .container {
-            padding: 5rem 5%;
+            padding: 4rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .section-title {
-            text-align: center;
             font-size: 2.2rem;
-            margin-bottom: 3.5rem;
-            color: var(--secondary);
+            color: var(--maroon);
+            margin-bottom: 2rem;
+            border-bottom: 3px solid var(--orange);
+            padding-bottom: 0.5rem;
         }
 
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 4px;
-            background-color: var(--primary);
-            margin: 12px auto 0;
-            border-radius: 2px;
-        }
-
-        /* Services Grid Layout */
-        .services-grid {
+        /* Grid Framework for Layout Split */
+        .dashboard-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2.5rem;
+            margin-bottom: 4rem;
         }
 
-        .service-card {
-            background: white;
-            border-radius: 8px;
-            padding: 2.5rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            border-top: 4px solid var(--secondary);
-            transition: transform 0.3s, border-color 0.3s;
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.06);
+            border-left: 5px solid var(--maroon);
         }
 
-        .service-card:hover {
-            transform: translateY(-5px);
-            border-top-color: var(--primary);
+        /* Maintenance & Schedule Details */
+        .status-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
         }
 
-        .service-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
+        .status-ready { background-color: #dcfce7; color: #166534; }
+        .status-pending { background-color: #ffedd5; color: #9a3412; }
+
+        ul.item-list {
+            list-style: none;
+            margin-top: 1rem;
         }
 
-        .service-card h3 {
-            margin-bottom: 1rem;
-            color: var(--secondary);
-            font-size: 1.4rem;
+        ul.item-list li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #f3f4f6;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        .service-card p {
-            color: var(--gray);
-            font-size: 0.95rem;
-        }
-
-        /* Contact & Inquiry Form Block */
-        .contact-section {
-            background-color: white;
-            padding: 4rem 5%;
-            max-width: 600px;
-            margin: 2rem auto;
-            border-radius: 8px;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-        }
-
-        .form-group {
+        /* Interactive Expense Tracker Feature */
+        .form-row {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
             margin-bottom: 1.5rem;
         }
 
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-        }
-
-        .form-group input, .form-group textarea {
-            width: 100%;
-            padding: 0.75rem;
+        input, select {
+            padding: 0.6rem;
             border: 1px solid #cbd5e1;
-            border-radius: 4px;
-            outline: none;
+            border-radius: 6px;
+            font-size: 0.95rem;
         }
 
-        .form-group input:focus, .form-group textarea:focus {
-            border-color: var(--secondary);
+        input[type="text"] { flex: 2; }
+        input[type="number"] { flex: 1; }
+
+        .btn {
+            background-color: var(--orange);
+            color: white;
+            border: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
         }
 
-        /* Footer Infrastructure */
+        .btn:hover { background-color: var(--maroon); }
+
+        .total-display {
+            background-color: var(--light);
+            border: 2px dashed var(--gold);
+            padding: 1rem;
+            border-radius: 8px;
+            font-size: 1.25rem;
+            font-weight: bold;
+            text-align: center;
+            color: var(--maroon);
+            margin-top: 1rem;
+        }
+
+        /* Sticky Footer System */
         footer {
             background-color: var(--dark);
             color: #94a3b8;
             text-align: center;
-            padding: 2.5rem;
-            margin-top: 5rem;
+            padding: 2rem;
+            margin-top: 6rem;
             font-size: 0.9rem;
+            border-top: 4px solid var(--gold);
         }
     </style>
 </head>
 <body>
 
-    <!-- Top Navigation Header -->
+    <!-- Header System -->
     <header>
-        <div class="logo">🛠️ Ganesh <span>Maintenance</span></div>
+        <div class="logo">🔱 Ganesh Utsav Samiti</div>
         <nav>
-            <a href="#">Home</a>
-            <a href="#services">Services</a>
-            <a href="#book">Book Service</a>
+            <a href="#chenda">Chenda Management</a>
+            <a href="#expenses">Expense Budget</a>
         </nav>
     </header>
 
-    <!-- Top Hero Space -->
+    <!-- Contextual Hero Space -->
     <section class="hero">
-        <h1>Reliable Maintenance & Repairs</h1>
-        <p>Your trusted partner for home, electrical, plumbing, and structural facility upkeep solutions. Quick, clean, and professional.</p>
-        <a href="#book" class="btn">Schedule a Visit</a>
+        <h1>Ganesh Festival Command Center</h1>
+        <p>Centralized ledger for managing structural festival spending, processing materials acquisition, and organizing traditional Chenda Melam asset health loops.</p>
     </section>
 
-    <!-- Core Business Offerings Section -->
-    <main class="container" id="services">
-        <h2 class="section-title">Our Solutions</h2>
+    <main class="container">
         
-        <div class="services-grid">
-            <!-- Service 1 -->
-            <div class="service-card">
-                <div class="service-icon">⚡</div>
-                <h3>Electrical Upkeep</h3>
-                <p>Complete structural wiring checks, breakdown troubleshooting, socket upgrades, and regular commercial or residential grid safety inspections.</p>
+        <!-- Top Half: Chenda Asset Operations -->
+        <h2 class="section-title" id="chenda">🥁 Chenda Melam Management</h2>
+        <div class="dashboard-grid">
+            
+            <!-- Card 1: Instrument Inspections -->
+            <div class="card">
+                <h3>Chenda Health Logs</h3>
+                <p style="color: #64748b; font-size: 0.9rem; margin-bottom: 1rem;">Tracking mechanical tension, skin quality, and shell structures.</p>
+                <ul class="item-list">
+                    <li>
+                        <span>Main Chenda Unit #1</span>
+                        <span class="status-badge status-ready">Ready (Tightened)</span>
+                    </li>
+                    <li>
+                        <span>Main Chenda Unit #2</span>
+                        <span class="status-badge status-ready">Ready (Oiled)</span>
+                    </li>
+                    <li>
+                        <span>Bass Elathalam Pairs</span>
+                        <span class="status-badge status-ready">Polished</span>
+                    </li>
+                    <li>
+                        <span>Tanyan Drum Unit</span>
+                        <span class="status-badge status-pending">Requires Skin Tightening</span>
+                    </li>
+                </ul>
             </div>
 
-            <!-- Service 2 -->
-            <div class="service-card">
-                <div class="service-icon">🚰</div>
-                <h3>Plumbing Solutions</h3>
-                <p>Leaking pipe line remediation, pump system installations, fixture upgrades, water tank cleaning, and root-cause clogging corrections.</p>
-            </div>
-
-            <!-- Service 3 -->
-            <div class="service-card">
-                <div class="service-icon">🧱</div>
-                <h3>Facility Handyman</h3>
-                <p>General carpentry adjustments, structural masonry touch-ups, door hardware alignments, item mounting, and ongoing interior repairs.</p>
+            <!-- Card 2: Performance Timetable -->
+            <div class="card">
+                <h3>Melam Performance Schedule</h3>
+                <p style="color: #64748b; font-size: 0.9rem; margin-bottom: 1rem;">Allocating timelines across targeted layout intervals.</p>
+                <ul class="item-list">
+                    <li>
+                        <strong>Aagaman (Welcome Procession)</strong>
+                        <span>Day 1 — 5:00 PM</span>
+                    </li>
+                    <li>
+                        <strong>Maha Aarti Performance</strong>
+                        <span>Day 5 — 7:30 PM</span>
+                    </li>
+                    <li>
+                        <strong>Visarjan Shobhayatra</strong>
+                        <span>Day 10 — 4:00 PM</span>
+                    </li>
+                </ul>
             </div>
         </div>
-    </main>
 
-    <!-- Service Booking Section -->
-    <section class="container" id="book" style="background-color: #f1f5f9;">
-        <h2 class="section-title">Request Maintenance</h2>
-        <div class="contact-section">
-            <form onsubmit="event.preventDefault(); alert('Request logged successfully via automated interface!');">
-                <div class="form-group">
-                    <label for="name">Your Name</label>
-                    <input type="text" id="name" required placeholder="Enter full name">
-                </div>
-                <div class="form-group">
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" required placeholder="Enter active contact number">
-                </div>
-                <div class="form-group">
-                    <label for="service">Required Category</label>
-                    <input type="text" id="service" required placeholder="e.g., Electrical, Plumbing">
-                </div>
-                <div class="form-group">
-                    <label for="details">Issue Description</label>
-                    <textarea id="details" rows="4" required placeholder="Briefly describe what needs to be fixed..."></textarea>
-                </div>
-                <button type="submit" class="btn" style="width: 100%;">Submit Inquiry</button>
-            </form>
-        </div>
-    </section>
+        <!-- Bottom Half: Interactive Financial Ledger Ecosystem -->
+        <h2 class="section-title" id="expenses">💰 Festival Expense & Material Ledger</h2>
+        <div class="card" style="max-width: 800px; margin: 0 auto; border-left-color: var(--orange);">
+            <h3>Real-Time Budget Calculator</h3>
+            <p style="color: #64748b; font-size: 0.9rem; margin-bottom: 1.5rem;">Input procurement updates, decoration requirements, or Chenda repair costs directly.</p>
+            
+            <!-- User Input Interface Layout -->
+            <div class="form-row">
+                <input type="text" id="expenseName" placeholder="Item Name (e.g., Flowers, Prasad, Drum Skinfoil)">
+                <input type="number" id="expenseAmount" placeholder="Amount (₹)">
+                <button class="btn" onclick="addExpense()">Add Item</button>
+            </div>
 
-    <!-- Automated Pipeline Environment Footer -->
-    <footer>
-        <p>&copy; 2026 Ganesh Maintenance Services. Verified and active on automated Nginx server via Jenkins.</p>
-    </footer>
-
-</body>
-</html>
+            <!-- Ledger Table Structure -->
+            <table style="width: 100%; border-collapse: collapse; text-align: left; margin-top: 1rem;">
+                <thead>
+                    <tr style="border-bottom: 2px solid #cbd5e1; color: var(--maroon);">
+                        <th style="padding: 0.5rem;">Item Details</th>
+                        <th style="padding: 0.5rem; text-align: right;">Cost (₹)</th>
+                    </tr>
+                </thead>
+                <tbody id="ledgerBody">
+                    <tr style="border-bottom: 1px solid #e2e8f0;">
+                        <td style="padding: 0.75rem;">Ganesh Idol Procurement</td>
+                        <td style="padding: 0.75rem; text-align: right;">25,000</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #e2e8f0;">
+                        <td style="padding: 0.75rem;">Chenda Player Honorarium & Commute</td>
