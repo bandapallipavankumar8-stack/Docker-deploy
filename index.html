@@ -3,291 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ganesh Utsav - Chenda & Expense Tracker</title>
+    <title>Poultry Farm Order & Inquiry Form</title>
     <style>
-        /* Design Tokens & Core Setup */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Arial, sans-serif;
-        }
-
-        :root {
-            --maroon: #800020;
-            --orange: #f97316;
-            --gold: #eab308;
-            --dark: #1e1b4b;
-            --light: #fefce8;
-            --card-bg: #ffffff;
-        }
-
         body {
-            background-color: #fafaf9;
-            color: var(--dark);
-            line-height: 1.6;
+            font-family: Arial, sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 20px;
         }
-
-        /* Committee Header Navigation */
-        header {
-            background: linear-gradient(135deg, var(--maroon), var(--dark));
-            color: white;
-            padding: 1.5rem 5%;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .logo {
-            font-size: 1.6rem;
-            font-weight: 800;
-            color: var(--gold);
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-        }
-
-        nav a {
-            color: #f3f4f6;
-            text-decoration: none;
-            margin-left: 1.5rem;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: var(--gold);
-        }
-
-        /* Festival Hero Space */
-        .hero {
-            background: linear-gradient(rgba(30, 27, 75, 0.85), rgba(128, 0, 32, 0.9)), 
-                        url('https://unsplash.com') no-repeat center center/cover;
-            color: white;
-            padding: 6rem 5%;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-size: 3.2rem;
-            margin-bottom: 1rem;
-            color: var(--gold);
-        }
-
-        .hero p {
-            font-size: 1.25rem;
-            max-width: 800px;
-            margin: 0 auto 2rem;
-            color: #e0e7ff;
-        }
-
-        /* Main Workspace Containers */
-        .container {
-            padding: 4rem 5%;
-            max-width: 1200px;
+        .form-container {
+            max-width: 600px;
             margin: 0 auto;
-        }
-
-        .section-title {
-            font-size: 2.2rem;
-            color: var(--maroon);
-            margin-bottom: 2rem;
-            border-bottom: 3px solid var(--orange);
-            padding-bottom: 0.5rem;
-        }
-
-        /* Grid Framework for Layout Split */
-        .dashboard-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2.5rem;
-            margin-bottom: 4rem;
-        }
-
-        .card {
-            background: var(--card-bg);
-            border-radius: 12px;
-            padding: 2rem;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.06);
-            border-left: 5px solid var(--maroon);
-        }
-
-        /* Maintenance & Schedule Details */
-        .status-badge {
-            display: inline-block;
-            padding: 0.25rem 0.75rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: bold;
-        }
-
-        .status-ready { background-color: #dcfce7; color: #166534; }
-        .status-pending { background-color: #ffedd5; color: #9a3412; }
-
-        ul.item-list {
-            list-style: none;
-            margin-top: 1rem;
-        }
-
-        ul.item-list li {
-            padding: 0.75rem 0;
-            border-bottom: 1px solid #f3f4f6;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        /* Interactive Expense Tracker Feature */
-        .form-row {
-            display: flex;
-            gap: 0.5rem;
-            margin-top: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        input, select {
-            padding: 0.6rem;
-            border: 1px solid #cbd5e1;
-            border-radius: 6px;
-            font-size: 0.95rem;
-        }
-
-        input[type="text"] { flex: 2; }
-        input[type="number"] { flex: 1; }
-
-        .btn {
-            background-color: var(--orange);
-            color: white;
-            border: none;
-            padding: 0.6rem 1.2rem;
-            border-radius: 6px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        .btn:hover { background-color: var(--maroon); }
-
-        .total-display {
-            background-color: var(--light);
-            border: 2px dashed var(--gold);
-            padding: 1rem;
+            background: #ffffff;
+            padding: 30px;
             border-radius: 8px;
-            font-size: 1.25rem;
-            font-weight: bold;
-            text-align: center;
-            color: var(--maroon);
-            margin-top: 1rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
-
-        /* Sticky Footer System */
-        footer {
-            background-color: var(--dark);
-            color: #94a3b8;
+        h2 {
             text-align: center;
-            padding: 2rem;
-            margin-top: 6rem;
-            font-size: 0.9rem;
-            border-top: 4px solid var(--gold);
+            color: #2c3e50;
+            margin-bottom: 25px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #34495e;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="number"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+        textarea {
+            resize: vertical;
+            height: 100px;
+        }
+        button {
+            width: 100%;
+            background-color: #27ae60;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        button:hover {
+            background-color: #219653;
         }
     </style>
 </head>
 <body>
 
-    <!-- Header System -->
-    <header>
-        <div class="logo">🔱 Ganesh Utsav Samiti</div>
-        <nav>
-            <a href="#chenda">Chenda Management</a>
-            <a href="#expenses">Expense Budget</a>
-        </nav>
-    </header>
-
-    <!-- Contextual Hero Space -->
-    <section class="hero">
-        <h1>Ganesh Festival Command Center</h1>
-        <p>Centralized ledger for managing structural festival spending, processing materials acquisition, and organizing traditional Chenda Melam asset health loops.</p>
-    </section>
-
-    <main class="container">
+<div class="form-container">
+    <h2>Poultry Farm Inquiry & Order Form</h2>
+    <form action="#" method="POST">
         
-        <!-- Top Half: Chenda Asset Operations -->
-        <h2 class="section-title" id="chenda">🥁 Chenda Melam Management</h2>
-        <div class="dashboard-grid">
-            
-            <!-- Card 1: Instrument Inspections -->
-            <div class="card">
-                <h3>Chenda Health Logs</h3>
-                <p style="color: #64748b; font-size: 0.9rem; margin-bottom: 1rem;">Tracking mechanical tension, skin quality, and shell structures.</p>
-                <ul class="item-list">
-                    <li>
-                        <span>Main Chenda Unit #1</span>
-                        <span class="status-badge status-ready">Ready (Tightened)</span>
-                    </li>
-                    <li>
-                        <span>Main Chenda Unit #2</span>
-                        <span class="status-badge status-ready">Ready (Oiled)</span>
-                    </li>
-                    <li>
-                        <span>Bass Elathalam Pairs</span>
-                        <span class="status-badge status-ready">Polished</span>
-                    </li>
-                    <li>
-                        <span>Tanyan Drum Unit</span>
-                        <span class="status-badge status-pending">Requires Skin Tightening</span>
-                    </li>
-                </ul>
-            </div>
-
-            <!-- Card 2: Performance Timetable -->
-            <div class="card">
-                <h3>Melam Performance Schedule</h3>
-                <p style="color: #64748b; font-size: 0.9rem; margin-bottom: 1rem;">Allocating timelines across targeted layout intervals.</p>
-                <ul class="item-list">
-                    <li>
-                        <strong>Aagaman (Welcome Procession)</strong>
-                        <span>Day 1 — 5:00 PM</span>
-                    </li>
-                    <li>
-                        <strong>Maha Aarti Performance</strong>
-                        <span>Day 5 — 7:30 PM</span>
-                    </li>
-                    <li>
-                        <strong>Visarjan Shobhayatra</strong>
-                        <span>Day 10 — 4:00 PM</span>
-                    </li>
-                </ul>
-            </div>
+        <div class="form-group">
+            <label for="fullname">Full Name</label>
+            <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
         </div>
 
-        <!-- Bottom Half: Interactive Financial Ledger Ecosystem -->
-        <h2 class="section-title" id="expenses">💰 Festival Expense & Material Ledger</h2>
-        <div class="card" style="max-width: 800px; margin: 0 auto; border-left-color: var(--orange);">
-            <h3>Real-Time Budget Calculator</h3>
-            <p style="color: #64748b; font-size: 0.9rem; margin-bottom: 1.5rem;">Input procurement updates, decoration requirements, or Chenda repair costs directly.</p>
-            
-            <!-- User Input Interface Layout -->
-            <div class="form-row">
-                <input type="text" id="expenseName" placeholder="Item Name (e.g., Flowers, Prasad, Drum Skinfoil)">
-                <input type="number" id="expenseAmount" placeholder="Amount (₹)">
-                <button class="btn" onclick="addExpense()">Add Item</button>
-            </div>
+        <div class="form-group">
+            <label for="farmname">Farm / Business Name (Optional)</label>
+            <input type="text" id="farmname" name="farmname" placeholder="Enter farm name">
+        </div>
 
-            <!-- Ledger Table Structure -->
-            <table style="width: 100%; border-collapse: collapse; text-align: left; margin-top: 1rem;">
-                <thead>
-                    <tr style="border-bottom: 2px solid #cbd5e1; color: var(--maroon);">
-                        <th style="padding: 0.5rem;">Item Details</th>
-                        <th style="padding: 0.5rem; text-align: right;">Cost (₹)</th>
-                    </tr>
-                </thead>
-                <tbody id="ledgerBody">
-                    <tr style="border-bottom: 1px solid #e2e8f0;">
-                        <td style="padding: 0.75rem;">Ganesh Idol Procurement</td>
-                        <td style="padding: 0.75rem; text-align: right;">25,000</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid #e2e8f0;">
-                        <td style="padding: 0.75rem;">Chenda Player Honorarium & Commute</td>
+        <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter phone number" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="Enter email address" required>
+        </div>
+
+        <div class="form-group">
+            <label for="birdtype">Select Poultry/Bird Type</label>
+            <select id="birdtype" name="birdtype" required>
+                <option value="">-- Choose Type --</option>
+                <option value="broiler">Broiler Chicken (Meat)</option>
+                <option value="layer">Layer Chicken (Eggs)</option>
+                <option value="cockerel">Cockerel</option>
+                <option value="turkey">Turkey</option>
+                <option value="duck">Duck</option>
+                <option value="quail">Quail</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="quantity">Quantity Required</label>
+            <input type="number" id="quantity" name="quantity" min="1" placeholder="Enter number of birds or crates" required>
+        </div>
+
+        <div class="form-group">
+            <label for="message">Additional Notes / Delivery Address</label>
+            <textarea id="message" name="message" placeholder="Provide specific requirements, delivery dates, or location details..."></textarea>
+        </div>
+
+        <button type="submit">Submit Inquiry</button>
+    </form>
+</div>
+
+</body>
+</html>
